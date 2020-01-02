@@ -1,0 +1,12 @@
+.cta-button {
+  color: $app-secondary;
+  background: $app-primary;
+  text-decoration: none;
+  padding: 8px 24px;
+  border-radius: 25px;
+  &:hover {
+    background: $app-primary-hover;
+    color: $app-secondary;
+    text-decoration: none;
+  }
+}

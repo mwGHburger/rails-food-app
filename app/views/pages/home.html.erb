@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-hero-banner">
+    <div class="hero-text">
+        <h1 class="my-4">Zomato 2.0</h1>
+        <%= link_to "Discover", restaurants_path, class: "cta-button"%>
+    </div>
+    <%= image_tag "hero-image.jpeg", alt: "Le Wagon", class: "hero-image"%>
+</div>

@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+.home-hero-banner {
+  display: flex;
+  background: $app-neutral;
+  height: 75vh;
+  justify-content: space-around;
+  .hero-text {
+    align-self: center;
+    color: $app-secondary;
+  }
+  .hero-image {
+    background-size: contain;
+    width: 400px;
+    margin: 100px;
+  }
+}

@@ -2,6 +2,8 @@
 
 <ul>
     <% @restaurants.each do |restaurant|%>
-        <li><%= restaurant.id %></li>
+        <li>
+            <%= restaurant.name %>
+        </li>
     <% end %>
 </ul>
