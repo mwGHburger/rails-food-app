@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-puts "Creating Restaurants"
+puts "Creating restaurants"
     10.times do
         restaurant = Restaurant.new(
             name: Faker::Restaurant.name,
@@ -18,4 +18,16 @@ puts "Creating Restaurants"
         )
         restaurant.save
     end
-puts "Finished Creating Restaurants"
+puts "Finished creating restaurants"
+
+puts "Creating restaurant reviews"
+    10.times do
+        review = Review.new(
+            restaurant_id: rand(11),
+            user_id: 1,
+            comment: Faker::Restaurant.review,
+            rating: rand(6)
+        )
+        review.save
+    end
+puts "Finished creating restaurant reviews"

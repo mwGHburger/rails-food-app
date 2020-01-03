@@ -1,0 +1,7 @@
+<div>
+    <% @reviews.each do |review| %>
+        <h3>Rating: <%=review.rating%></h3>
+        <h3>restaurant_id: <%=review.restaurant_id%></h3>
+        <h3>user_id: <%=review.user_id%></h3>
+    <% end %>
+</div>
