@@ -1,9 +1,6 @@
 <h1>Restaurants Index</h1>
-
-<ul>
-    <% @restaurants.each do |restaurant|%>
-        <li>
-            <%= restaurant.name %>
-        </li>
-    <% end %>
-</ul>
+<div class="restaurants-cards">
+<% @restaurants.each do |restaurant|%>
+    <%= link_to restaurant.name, restaurant_path(restaurant), class:"restaurant-card"%>
+<% end %>
+</div>

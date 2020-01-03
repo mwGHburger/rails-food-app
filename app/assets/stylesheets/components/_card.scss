@@ -1,0 +1,14 @@
+.restaurant-card {
+  background: $success;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $app-secondary;
+  &:hover {
+    text-decoration: none;
+    color: $app-secondary;
+    background-color: $error;
+  }
+}
