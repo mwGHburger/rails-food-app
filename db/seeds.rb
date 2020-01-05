@@ -14,7 +14,8 @@ puts "Creating restaurants"
             address: Faker::Address.street_address,
             description: Faker::Restaurant.description,
             cuisine: Faker::Nation.nationality,
-            rating: rand(6)
+            rating: rand(6),
+            user_id: 1
         )
         restaurant.save
     end

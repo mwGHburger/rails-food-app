@@ -16,7 +16,6 @@ class ReviewsController < ApplicationController
         @review.restaurant = @restaurant
         # Connecting review to user
         @review.user = current_user
-        raise
         if @review.save
             # if true, @review.save will save the instance
             redirect_to restaurant_reviews_path(@restaurant)

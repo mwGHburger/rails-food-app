@@ -1,7 +1,10 @@
 <%= simple_form_for @restaurant do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :cuisine %>
-    <%= f.input :description %>
+    <%= f.input :name, label: "What's your restaurant called?" %>
+    <%= f.input :address, label: "Where is your restaurant located?" %>
+    <%= f.input :cuisine, label: "What type of cuisine(s) would you use to describe your restaurant's food?" %>
+    <%= f.input :description, label: "Give a short description of your restaurant" %>
+    <%= f.input :menu_photos, as: :file, input_html: { multiple: true }, label: "Upload a photo of your menu here:" %>
+    <%= f.input :food_photos, as: :file, input_html: { multiple: true }, label: "Upload photos of your food here:" %>
+    <%= f.input :ambience_photos, as: :file, input_html: { multiple: true }, label: "Upload photos of your restaurant here:" %>
     <%= f.submit "add restaurant", class: "btn btn-primary" %>
 <% end %>
