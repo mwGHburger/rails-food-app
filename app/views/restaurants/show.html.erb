@@ -2,7 +2,19 @@
 <h1>Description:<%=@restaurant.description%></h1>
 <h1>Address:<%=@restaurant.address%></h1>
 <h1>Cuisine:<%=@restaurant.cuisine%></h1>
-<h1>Rating:<%=@restaurant.rating%></h1>
+<h1>Rating:<%= "*" * (@sum_restaurant_rating / @reviews.size) %></h1>
+
+<% @restaurant.menu_photos.each do |menu_photo| %>
+    <%= cl_image_tag menu_photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<% @restaurant.food_photos.each do |food_photo| %>
+    <%= cl_image_tag food_photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<% @restaurant.ambience_photos.each do |ambience_photo| %>
+    <%= cl_image_tag ambience_photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 
 <%= link_to "See all reviews", restaurant_reviews_path(@restaurant) %>
 <%= link_to "Add review", new_restaurant_review_path(@restaurant) %>

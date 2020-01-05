@@ -5,6 +5,12 @@ class RestaurantsController < ApplicationController
 
     def show
         @restaurant = Restaurant.find(params[:id])
+        @reviews = Review.where(restaurant_id: params[:id])
+        # calculation for restaurant rating
+        @sum_restaurant_rating = 0
+        @reviews.each do |review|
+            @sum_restaurant_rating += review.rating
+        end
     end
 
     def new
@@ -25,6 +31,6 @@ class RestaurantsController < ApplicationController
     private
 
     def strong_restaurant_params
-        params.require(:restaurant).permit(:name, :address, :cuisine, :description)
+        params.require(:restaurant).permit(:name, :address, :cuisine, :description, menu_photos: [], food_photos: [], ambience_photos: [])
     end
 end
