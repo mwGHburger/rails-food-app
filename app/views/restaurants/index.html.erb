@@ -1,6 +1,18 @@
-<h1>Restaurants Index</h1>
-<div class="restaurants-cards">
-    <% @restaurants.each do |restaurant|%>
-        <%= link_to restaurant.name, restaurant_path(restaurant), {class: "restaurant-card" }%>
-    <% end %>
-</div>
+<div class="restaurants-container">
+    <h1>EXPLORE & DISCOVER</h1>
+    <div class="restaurants-cards">
+        <% @restaurants.each do |restaurant|%>
+            <div>
+                <%= link_to restaurant_path(restaurant) do%>
+                    <div class= "restaurant-card">
+                        <div class="img-hover-zoom">
+                            <%= cl_image_tag restaurant.display_photo.key, width: 268, height: 375, crop: :scale %>
+                        </div>
+                        <p class="cuisine-text"><%= restaurant.cuisine %></p>
+                        <%= link_to restaurant.name, restaurant_path(restaurant), class:"restaurant-name-text" %>
+                    </div>
+                <%end%>
+            </div>
+        <% end %>
+    </div>
+<div>

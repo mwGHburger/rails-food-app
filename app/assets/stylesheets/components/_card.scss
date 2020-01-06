@@ -1,18 +1,53 @@
 .restaurant-card {
-  background: $crayon-red;
-  background-size: cover;
-  width: 150px;
-  height: 190px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  border: 4px solid $crayon-outline;
-  border-radius: 20px;
+  width: 300px;
+  flex-direction: column;
+  font-family: $montserrat;
+  box-shadow: 1px 1px 5px 1px rgb(240, 240, 240);
+  padding: 8px 16px;
+  transition: 0.2s ease-in-out;
+  animation: load-appear 1.3s;
+  animation-fill-mode: both;
+  animation-delay: 0.3s;
   &:hover {
-    text-decoration: none;
-    color: white;
-    background-color: $error;
+    box-shadow: 2px 2px 5px 1px rgb(220, 220, 220);
+  }
+  .img-hover-zoom {
+    overflow: hidden;
+    img {
+      border-radius: 4px;
+      transition: transform 10s ease-out;
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+  .cuisine-text {
+    margin-top: 8px;
+    margin-bottom: 0px;
+    font-weight: 300;
+    font-style: italic;
+  }
+  a {
+    color: $app-secondary;
+    text-align: center;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .restaurant-name-text {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes load-appear {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 100;
   }
 }
