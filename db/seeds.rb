@@ -6,17 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require "open-uri"
 
 puts "Creating restaurants"
     10.times do
+        file = URI.open('https://res.cloudinary.com/dzc6q8nit/image/upload/v1568356694/ph3u0uqdci8howmedajv.jpg')
         restaurant = Restaurant.new(
             name: Faker::Restaurant.name,
             address: Faker::Address.street_address,
             description: Faker::Restaurant.description,
             cuisine: Faker::Nation.nationality,
-            rating: rand(6),
             user_id: 1
         )
+        restaurant.display_photo.attach(io: file, filename: 'display.png', content_type: 'image/png')
         restaurant.save
     end
 puts "Finished creating restaurants"

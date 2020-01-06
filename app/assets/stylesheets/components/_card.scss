@@ -1,14 +1,18 @@
 .restaurant-card {
-  background: $success;
-  width: 100px;
-  height: 100px;
+  background: $crayon-red;
+  background-size: cover;
+  width: 150px;
+  height: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $app-secondary;
+  color: white;
+  text-align: center;
+  border: 4px solid $crayon-outline;
+  border-radius: 20px;
   &:hover {
     text-decoration: none;
-    color: $app-secondary;
+    color: white;
     background-color: $error;
   }
 }

@@ -2,7 +2,14 @@
 <h1>Description:<%=@restaurant.description%></h1>
 <h1>Address:<%=@restaurant.address%></h1>
 <h1>Cuisine:<%=@restaurant.cuisine%></h1>
-<h1>Rating:<%= "*" * (@sum_restaurant_rating / @reviews.size) %></h1>
+<h1>
+    Rating:
+    <% if @reviews.size == 0 %>
+        No reviews yet
+    <% else %>
+        <%= "*" * (@sum_restaurant_rating / @reviews.size) %>
+    <% end %>
+</h1>
 
 <% @restaurant.menu_photos.each do |menu_photo| %>
     <%= cl_image_tag menu_photo.key, height: 300, width: 400, crop: :fill %>
