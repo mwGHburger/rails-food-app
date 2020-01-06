@@ -1,12 +1,15 @@
 .cta-button {
   color: $app-secondary;
-  background: $app-primary;
+  font-size: 1rem;
+  background: none;
   text-decoration: none;
-  padding: 8px 24px;
+  padding: 12px 28px;
+  border: 1px solid $app-secondary;
   border-radius: 25px;
+  transition: 0.2s;
   &:hover {
-    background: $app-primary-hover;
-    color: $app-secondary;
+    color: $success;
     text-decoration: none;
+    border-color: $success;
   }
 }

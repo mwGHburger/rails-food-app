@@ -1,16 +1,112 @@
 // Specific CSS for your home-page
 .home-hero-banner {
+  // background-image: url("hero-background-1.jpg");
+  // background-size: cover;
+  background: white;
+  font-family: $montserrat;
   display: flex;
-  background: $app-neutral;
-  height: 75vh;
-  justify-content: space-around;
+  height: 100vh;
   .hero-text {
     align-self: center;
     color: $app-secondary;
+    padding: 16px 16px 16px 128px;
+    h1 {
+      font-size: 4rem;
+      margin: 0;
+    }
+    h3 {
+      font-size: 3rem;
+      color: $crayon-red;
+    }
   }
   .hero-image {
     background-size: contain;
-    width: 400px;
-    margin: 100px;
+    width: 12%;
+    height: auto;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    opacity: 80%;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      z-index: 2;
+      opacity: 100%;
+      width: 13%;
+    }
+  }
+  .hero-image-2 {
+    background-size: contain;
+    width: 12%;
+    height: auto;
+    position: absolute;
+    top: 80%;
+    right: 15%;
+    opacity: 80%;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      z-index: 2;
+      opacity: 100%;
+      width: 13%;
+    }
+  }
+  .hero-image-3 {
+    background-size: contain;
+    width: 12%;
+    height: auto;
+    position: absolute;
+    top: 20%;
+    right: 31%;
+    opacity: 80%;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      z-index: 2;
+      opacity: 100%;
+      width: 13%;
+    }
+  }
+  .hero-image-4 {
+    background-size: contain;
+    width: 12%;
+    height: auto;
+    position: absolute;
+    top: 60%;
+    right: 15%;
+    opacity: 80%;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      z-index: 2;
+      opacity: 100%;
+      width: 13%;
+    }
+  }
+  .hero-image-5 {
+    background-size: contain;
+    width: 12%;
+    height: auto;
+    position: absolute;
+    top: 42%;
+    right: 31%;
+    opacity: 80%;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      z-index: 2;
+      opacity: 100%;
+      width: 13%;
+    }
+  }
+  .hero-image-6 {
+    background-size: contain;
+    width: 12%;
+    height: auto;
+    position: absolute;
+    top: 80%;
+    right: 31%;
+    opacity: 80%;
+    transition: 0.5s ease-in-out;
+    &:hover {
+      z-index: 2;
+      opacity: 100%;
+      width: 13%;
+    }
   }
 }
