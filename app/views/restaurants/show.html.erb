@@ -1,27 +1,54 @@
-<h1>Name:<%=@restaurant.name%></h1>
-<h1>Description:<%=@restaurant.description%></h1>
-<h1>Address:<%=@restaurant.address%></h1>
-<h1>Cuisine:<%=@restaurant.cuisine%></h1>
-<h1>
-    Rating:
-    <% if @reviews.size == 0 %>
-        No reviews yet
-    <% else %>
-        <%= "*" * (@sum_restaurant_rating / @reviews.size) %>
+<div class="restaurants-show-container">
+    <div class="restaurants-show-section-1">
+        <h1 class="restaurant-show-title"><%=@restaurant.name%></h1>
+        <%= cl_image_tag @restaurant.display_photo.key, class: "restaurants-show-header-image" %>
+    </div>
+    <h3 class="restaurant-show-cuisine"><%=@restaurant.cuisine%></h3>
+    <div class="restaurant-show-rating">
+        <% if @reviews.size == 0 %>
+            <div>No reviews yet</div>
+        <% else %>
+            <% rating_multiple = @sum_restaurant_rating / @reviews.size %>
+            <div>
+                <% rating_multiple.times do %>
+                    <i class="fas fa-star"></i>
+                <% end %>
+                    <% if @restaurant.reviews.size == 1 %>
+                    <%= link_to "#{@restaurant.reviews.size} review", restaurant_reviews_path(@restaurant), class:"link-to-reviews" %>
+                    <% else %>
+                        <%= link_to "#{@restaurant.reviews.size} reviews", restaurant_reviews_path(@restaurant), class:"link-to-reviews" %>
+                    <% end %>
+            </div>
+        <% end %>
+        <div class="restaurant-info">
+            <p><i class="fas fa-home mr-3"></i> <%=@restaurant.address%></p>
+            <p><i class="fas fa-book mr-3"></i> Bookings Available</p>
+            <p><i class="fas fa-laptop mr-3"></i><a href="#">Website</a></p>
+            <p><i class="fas fa-money-check-alt mr-3"></i> Moderately Priced</p>
+        </div>
+    </div>
+    <div style="background: rgb(240,240,240); padding: 2rem 0;">
+        <div style="text-align: left; margin-left: 4rem; margin-top: 4rem;">
+            <%= image_tag "quotes-left.svg", alt: "left-quote", width: 100, class:"restaurant-description-leftq" %>
+        </div>
+        <h2 class="restaurant-show-description"><%=@restaurant.description%></h2>
+        <div style="text-align: right; margin-right: 4rem; margin-bottom: 4rem;">
+            <%= image_tag "quotes-right.svg", alt: "right-quote", width: 100, class:"restaurant-description-rightq" %>
+        </div>
+    </div>    
+    
+    <% @restaurant.menu_photos.each do |menu_photo| %>
+        <%= cl_image_tag menu_photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
-</h1>
 
-<% @restaurant.menu_photos.each do |menu_photo| %>
-    <%= cl_image_tag menu_photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+    <% @restaurant.food_photos.each do |food_photo| %>
+        <%= cl_image_tag food_photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
 
-<% @restaurant.food_photos.each do |food_photo| %>
-    <%= cl_image_tag food_photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+    <% @restaurant.ambience_photos.each do |ambience_photo| %>
+        <%= cl_image_tag ambience_photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
 
-<% @restaurant.ambience_photos.each do |ambience_photo| %>
-    <%= cl_image_tag ambience_photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-<%= link_to "See all reviews", restaurant_reviews_path(@restaurant) %>
-<%= link_to "Add review", new_restaurant_review_path(@restaurant) %>
+    <%= link_to "See all reviews", restaurant_reviews_path(@restaurant) %>
+    <%= link_to "Add review", new_restaurant_review_path(@restaurant) %>
+</div>

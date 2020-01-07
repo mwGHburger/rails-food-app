@@ -38,6 +38,13 @@
   .restaurant-name-text {
     font-size: 1.5rem;
   }
+  .restaurant-rating {
+    text-align: center;
+    color: $crayon-red;
+    p {
+      margin: 0;
+    }
+  }
 }
 
 @keyframes load-appear {
