@@ -1,4 +1,5 @@
 .restaurants-show-container {
+  font-family: $montserrat;
   background: white;
   height: 200vh;
   .restaurants-show-section-1 {
@@ -35,7 +36,7 @@
     align-items: center;
     color: $crayon-outline;
     margin: 5rem 4rem;
-    padding-right: 10rem;
+    margin-right: 0;
     font-size: 3rem;
     .link-to-reviews {
       color: $crayon-outline;
@@ -43,10 +44,13 @@
     .restaurant-info {
       text-align: left;
       border: 4px solid $crayon-outline;
-      padding: 24px 36px;
-      border-radius: 15px;
+      border-right: 0px;
+      padding: 0 36px;
+      padding-right: 20rem;
+      border-radius: 4px;
       p {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin: 1.5rem 0;
       }
     }
   }

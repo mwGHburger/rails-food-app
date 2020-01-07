@@ -21,13 +21,14 @@
             </div>
         <% end %>
         <div class="restaurant-info">
+            <p><i class="fas fa-utensils mr-3"></i> <%=@restaurant.cuisine%></p>
             <p><i class="fas fa-home mr-3"></i> <%=@restaurant.address%></p>
             <p><i class="fas fa-book mr-3"></i> Bookings Available</p>
             <p><i class="fas fa-laptop mr-3"></i><a href="#">Website</a></p>
             <p><i class="fas fa-money-check-alt mr-3"></i> Moderately Priced</p>
         </div>
     </div>
-    <div style="background: rgb(240,240,240); padding: 2rem 0;">
+    <div style="padding: 2rem 0;">
         <div style="text-align: left; margin-left: 4rem; margin-top: 4rem;">
             <%= image_tag "quotes-left.svg", alt: "left-quote", width: 100, class:"restaurant-description-leftq" %>
         </div>
