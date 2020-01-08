@@ -10,6 +10,24 @@
                         </div>
                         <p class="cuisine-text"><%= restaurant.cuisine %></p>
                         <%= link_to restaurant.name, restaurant_path(restaurant), class:"restaurant-name-text" %>
+                        <div class="restaurant-rating">
+                            <% reviews = Review.where(restaurant_id: restaurant.id) %>
+                            <% sum_restaurant_rating = 0 %>
+                            <% reviews.each do |review| %>
+                                <% sum_restaurant_rating += review.rating %>
+                            <% end %>
+
+                            <% if restaurant.reviews.size == 0 %>
+                                <p>No reviews</p>
+                            <% else %>
+                                <% rating_multiple =  sum_restaurant_rating / restaurant.reviews.size %>
+                                <% rating_multiple.times do %>
+                                    <i class="far fa-star"></i>
+                                <% end %> 
+                            <% end %>
+                            
+                               
+                        </div>    
                     </div>
                 <%end%>
             </div>
