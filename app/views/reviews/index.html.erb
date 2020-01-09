@@ -1,7 +1,7 @@
 <div class="reviews-index-container">
     <% @reviews.each do |review| %>
         <div class="review-bar">
-            <h1>image</h1>
+            <%= cl_image_tag review.user.photo, class:"review-bar-user-pic" %>
             <div class="review-content">
                 <p class="review-date"><%=review.created_at.to_datetime.strftime("%d/%m/%y")%></p>
                 <div class="review-bar-rating">

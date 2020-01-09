@@ -10,15 +10,18 @@ require "open-uri"
 
 puts "Creating restaurants"
     3.times do
-        file = URI.open("https://i.picsum.photos/id/#{rand(1000)}/200/300")
         restaurant = Restaurant.new(
             name: Faker::Restaurant.name,
             address: Faker::Address.street_address,
             description: Faker::Restaurant.description,
             cuisine: Faker::Nation.nationality,
-            user_id: 1
+            user_id: 1,
+            remote_photo_url: "https://i.picsum.photos/id/302/200/200.jpg"
         )
-        restaurant.display_photo.attach(io: file, filename: 'file.jpeg', content_type: "image/jpeg")
+        rand(3).times do
+            photo_file = URI.open("https://i.picsum.photos/id/800/200/300.jpg")
+            restaurant.photos.attach(io: photo_file, filename: 'file.jpeg', content_type: "image/jpeg")
+        end
         restaurant.save
     end
 puts "Finished creating restaurants"

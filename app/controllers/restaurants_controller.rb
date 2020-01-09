@@ -31,6 +31,6 @@ class RestaurantsController < ApplicationController
     private
 
     def strong_restaurant_params
-        params.require(:restaurant).permit(:name, :address, :cuisine, :description, menu_photos: [], food_photos: [], ambience_photos: [])
+        params.require(:restaurant).permit(:name, :address, :cuisine, :description, :photo, photos: [])
     end
 end
