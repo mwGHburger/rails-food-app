@@ -3,29 +3,34 @@
         <h1 class="restaurant-show-title"><%=@restaurant.name%></h1>
         <%= cl_image_tag @restaurant.display_photo.key, class: "restaurants-show-header-image" %>
     </div>
-    <h3 class="restaurant-show-cuisine"><%=@restaurant.cuisine%></h3>
+     <h3 class="restaurant-show-cuisine"><%=@restaurant.cuisine%></h3>
     <div class="restaurant-show-rating">
-        <% if @reviews.size == 0 %>
-            <div>No reviews yet</div>
-        <% else %>
-            <% rating_multiple = @sum_restaurant_rating / @reviews.size %>
-            <div>
-                <% rating_multiple.times do %>
-                    <i class="fas fa-star"></i>
-                <% end %>
-                    <% if @restaurant.reviews.size == 1 %>
-                    <%= link_to "#{@restaurant.reviews.size} review", restaurant_reviews_path(@restaurant), class:"link-to-reviews" %>
-                    <% else %>
-                        <%= link_to "#{@restaurant.reviews.size} reviews", restaurant_reviews_path(@restaurant), class:"link-to-reviews" %>
-                    <% end %>
-            </div>
-        <% end %>
+        
         <div class="restaurant-info">
             <p><i class="fas fa-utensils mr-3"></i> <%=@restaurant.cuisine%></p>
             <p><i class="fas fa-home mr-3"></i> <%=@restaurant.address%></p>
             <p><i class="fas fa-book mr-3"></i> Bookings Available</p>
             <p><i class="fas fa-laptop mr-3"></i><a href="#">Website</a></p>
             <p><i class="fas fa-money-check-alt mr-3"></i> Moderately Priced</p>
+        </div>
+        <div class="d-flex flex-column justify-content-end">
+            <% if @reviews.size == 0 %>
+                <div>No reviews yet</div>
+            <% else %>
+                <% rating_multiple = @sum_restaurant_rating / @reviews.size %>
+                <div>
+                    <% rating_multiple.times do %>
+                        <i class="fas fa-star"></i>
+                    <% end %>
+                        <% if @restaurant.reviews.size == 1 %>
+                        <%= link_to "#{@restaurant.reviews.size} review", restaurant_reviews_path(@restaurant), class:"link-to-reviews" %>
+                        
+                        <% else %>
+                            <%= link_to "#{@restaurant.reviews.size} reviews", restaurant_reviews_path(@restaurant), class:"link-to-reviews" %>
+                        <% end %>
+                </div>
+            <% end %>
+            <%= link_to "(Add a review)", new_restaurant_review_path(@restaurant), class:"add-reviews" %>
         </div>
     </div>
     <div style="padding: 2rem 0;">
@@ -48,8 +53,5 @@
 
     <% @restaurant.ambience_photos.each do |ambience_photo| %>
         <%= cl_image_tag ambience_photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-
-    <%= link_to "See all reviews", restaurant_reviews_path(@restaurant) %>
-    <%= link_to "Add review", new_restaurant_review_path(@restaurant) %>
+    <% end %>    
 </div>

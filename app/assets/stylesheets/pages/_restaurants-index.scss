@@ -2,7 +2,12 @@
   background: white;
   padding-left: 3rem;
   padding-right: 3rem;
-  height: 150vh;
+  min-height: 150vh;
+}
+
+.restaurants-index-title {
+  font-size: 4rem;
+  margin: 0;
 }
 
 .restaurants-cards {

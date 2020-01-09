@@ -1,8 +1,16 @@
-<div>
+<div class="reviews-index-container">
     <% @reviews.each do |review| %>
-        <h3>Rating: <%=review.rating%></h3>
-        <p>comment: <%=review.comment%></p>
-        <p>restaurant_id: <%=review.restaurant_id%></p>
-        <p>user_id: <%=review.user_id%></p>
+        <div class="review-bar">
+            <h1>image</h1>
+            <div class="review-content">
+                <p class="review-date"><%=review.created_at.to_datetime.strftime("%d/%m/%y")%></p>
+                <div class="review-rating">
+                    <% review.rating.times do %>
+                        <i class="fas fa-star"></i>
+                    <% end %>
+                </div>
+                <p><%=review.comment%></p>
+            </div>
+        </div>
     <% end %>
 </div>
