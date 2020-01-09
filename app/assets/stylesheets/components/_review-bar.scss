@@ -1,0 +1,19 @@
+.review-bar {
+  display: flex;
+  border: rgba(200, 200, 200, 0.5) 1px solid;
+  box-shadow: rgb(250, 250, 250) 1px 1px 1px;
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  .review-content {
+    margin-left: 1rem;
+    .review-date {
+      margin: 0;
+      font-weight: 600;
+    }
+    .review-rating {
+      color: $crayon-yellow;
+      margin: 0.5rem 0;
+    }
+  }
+}

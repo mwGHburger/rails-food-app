@@ -27,6 +27,6 @@ class ReviewsController < ApplicationController
     private
 
   def strong_review_params
-    params.require(:review).permit(:comment, :rating)
+    params.require(:review).permit(:comment, :rating, :profile_photo)
   end
 end
