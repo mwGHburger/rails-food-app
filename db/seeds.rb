@@ -15,6 +15,8 @@ puts "Creating restaurants"
             address: Faker::Address.street_address,
             description: Faker::Restaurant.description,
             cuisine: Faker::Nation.nationality,
+            website: "https://ellamelbourne.com.au/",
+            pricing: ["A Cheap Eat", " Moderately Price", "Expensive"].sample,
             user_id: 1,
             remote_photo_url: "https://i.picsum.photos/id/302/200/200.jpg"
         )
