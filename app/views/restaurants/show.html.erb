@@ -15,7 +15,7 @@
         </div>
         <div class="d-flex flex-column justify-content-end">
             <% if @reviews.size == 0 %>
-                <div>No reviews yet</div>
+                <div style="color: #525260;">No reviews yet</div>
             <% else %>
                 <% rating_multiple = @sum_restaurant_rating / @reviews.size %>
                 <div>
