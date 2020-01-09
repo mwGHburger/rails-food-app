@@ -9,8 +9,8 @@ require 'faker'
 require "open-uri"
 
 puts "Creating restaurants"
-    10.times do
-        file = URI.open('https://res.cloudinary.com/dzc6q8nit/image/upload/v1568356694/ph3u0uqdci8howmedajv.jpg')
+    3.times do
+        file = URI.open("https://i.picsum.photos/id/#{rand(1000)}/200/300")
         restaurant = Restaurant.new(
             name: Faker::Restaurant.name,
             address: Faker::Address.street_address,
@@ -18,7 +18,7 @@ puts "Creating restaurants"
             cuisine: Faker::Nation.nationality,
             user_id: 1
         )
-        restaurant.display_photo.attach(io: file, filename: 'display.png', content_type: 'image/png')
+        restaurant.display_photo.attach(io: file, filename: 'file.jpeg', content_type: "image/jpeg")
         restaurant.save
     end
 puts "Finished creating restaurants"
@@ -26,7 +26,7 @@ puts "Finished creating restaurants"
 puts "Creating restaurant reviews"
     10.times do
         review = Review.new(
-            restaurant_id: rand(11),
+            restaurant_id: rand(4),
             user_id: 1,
             comment: Faker::Restaurant.review,
             rating: rand(6)
