@@ -61,6 +61,9 @@
       padding: 0 36px;
       padding-right: 20rem;
       border-radius: 4px;
+      .website-link {
+        color: $crayon-red;
+      }
       p {
         font-size: 1.5rem;
         margin: 1.5rem 0;
