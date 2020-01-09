@@ -4,3 +4,10 @@
   margin: 0 auto;
   font-family: $montserrat;
 }
+
+.link-back {
+  color: $crayon-red;
+  &:hover {
+    color: $crayon-red;
+  }
+}
