@@ -1,7 +1,7 @@
 <div class="restaurants-show-container">
     <div class="restaurants-show-section-1">
         <h1 class="restaurant-show-title"><%=@restaurant.name%></h1>
-        <%= cl_image_tag @restaurant.display_photo.key, class: "restaurants-show-header-image" %>
+        <%= cl_image_tag @restaurant.photo %>
     </div>
      <h3 class="restaurant-show-cuisine"><%=@restaurant.cuisine%></h3>
     <div class="restaurant-show-rating">
@@ -43,15 +43,7 @@
         </div>
     </div>    
     
-    <% @restaurant.menu_photos.each do |menu_photo| %>
-        <%= cl_image_tag menu_photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-
-    <% @restaurant.food_photos.each do |food_photo| %>
-        <%= cl_image_tag food_photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-
-    <% @restaurant.ambience_photos.each do |ambience_photo| %>
-        <%= cl_image_tag ambience_photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>    
+    <% @restaurant.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>  
 </div>
