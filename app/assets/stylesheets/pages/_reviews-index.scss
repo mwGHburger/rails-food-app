@@ -1,5 +1,4 @@
 .reviews-index-container {
-  width: 1440px;
   min-height: 100vh;
   margin: 0 auto;
   font-family: $montserrat;
@@ -9,5 +8,12 @@
   color: $crayon-red;
   &:hover {
     color: $crayon-red;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .reviews-index-container {
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
   }
 }

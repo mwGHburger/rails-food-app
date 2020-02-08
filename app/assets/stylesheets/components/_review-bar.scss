@@ -18,6 +18,9 @@
   }
   .review-content {
     margin-left: 1rem;
+    p {
+      margin: 0;
+    }
     .review-date {
       margin: 0;
       font-weight: 600;
@@ -25,6 +28,27 @@
     .review-bar-rating {
       color: $crayon-yellow;
       margin: 0.5rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .review-bar {
+    margin: 2rem auto;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: start;
+
+    .review-content {
+      text-align: right;
+      display: flex;
+      justify-content: center;
+      text-align: left;
+      flex-direction: column;
+      margin: 2rem 0;
+      .review-comment {
+        position: relative;
+      }
     }
   }
 }
