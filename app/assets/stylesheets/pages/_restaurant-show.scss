@@ -1,49 +1,22 @@
 .restaurants-show-container {
   font-family: $montserrat;
   background: white;
-  min-height: 200vh;
-  max-width: 1440px;
-  margin: 0 auto;
-  .restaurants-show-section-1 {
-    display: flex;
-    justify-content: space-between;
-    padding: 4rem;
-    .restaurants-show-header-image {
-      width: 20rem;
-      height: 20rem;
-      object-fit: cover;
-      margin-top: 1rem;
-      margin-right: 1rem;
-      padding: 10px;
-      outline: 10px solid $crayon-outline;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  padding: 0 8rem;
   .restaurant-show-title {
     font-weight: 900;
-    font-size: 9rem;
-    width: 50rem;
+    font-size: 8rem;
     text-transform: uppercase;
     text-shadow: 80px 70px rgba(200, 200, 200, 0.8);
-    margin-bottom: 5rem;
-  }
-  .restaurant-show-cuisine {
-    display: none;
-    // position: absolute;
-    // top: 5rem;
-    // opacity: 0.1;
-    // font-size: 30rem;
-    // text-transform: uppercase;
-    // font-style: italic;
-    // font-weight: 300;
-    // margin-left: 4rem;
+    margin: 0;
+    margin-bottom: 10rem;
   }
   .restaurant-show-rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: $crayon-yellow;
-    margin: 5rem 4rem;
-    margin-right: 0;
     font-size: 2.5rem;
     .link-to-reviews {
       margin-left: 1rem;
@@ -58,9 +31,8 @@
       text-align: left;
       color: $crayon-outline;
       border: 4px solid $crayon-outline;
-      padding: 0 36px;
-      padding-right: 20rem;
       border-radius: 4px;
+      padding: 0 2rem;
       .website-link {
         color: $crayon-red;
       }
@@ -72,10 +44,16 @@
   }
 
   .restaurant-description-leftq {
+    position: relative;
+    top: 8rem;
+    left: 2rem;
     opacity: 0.6;
   }
 
   .restaurant-description-rightq {
+    position: relative;
+    bottom: 10rem;
+    left: 65rem;
     opacity: 0.6;
   }
 
@@ -83,5 +61,59 @@
     font-style: italic;
     font-weight: 300;
     margin: 5rem 10rem;
+  }
+
+  .restaurant-photos {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .restaurants-show-container {
+    padding: 0 1rem;
+    .restaurant-show-title {
+      font-size: 4rem;
+      text-shadow: 0px 0px rgba(200, 200, 200, 0.8);
+      margin-bottom: 4rem;
+    }
+    .restaurant-show-rating {
+      flex-direction: column;
+      .restaurant-info {
+        margin-bottom: 4rem;
+      }
+      .restaurant-rating {
+        font-size: 1.5rem;
+        align-self: flex-end;
+        margin-bottom: 4rem;
+      }
+    }
+    .restaurant-description {
+      .restaurant-description-leftq {
+        position: relative;
+        top: 1rem;
+        left: 0rem;
+        width: 50px;
+      }
+      .restaurant-show-description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.2rem;
+        margin: 0 0.8rem;
+        width: 20rem;
+        height: 10rem;
+        h2 {
+          margin: 0;
+        }
+      }
+      .restaurant-description-rightq {
+        position: relative;
+        width: 50px;
+        left: 18rem;
+        bottom: 1rem;
+      }
+    }
   }
 }

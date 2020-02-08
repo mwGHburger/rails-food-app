@@ -3,6 +3,7 @@
   padding-left: 3rem;
   padding-right: 3rem;
   min-height: 150vh;
+  padding: 2rem 4rem;
 }
 
 .restaurants-index-title {
@@ -12,9 +13,29 @@
 
 .restaurants-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   column-gap: 1rem;
   row-gap: 4rem;
-  background: white;
+  margin: 2rem auto;
+}
+
+@media screen and (max-width: 992px) {
+  .restaurants-container {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .restaurants-index-title {
+      font-size: 1.8rem;
+      margin: 2rem auto;
+    }
+  }
+
+  .restaurants-cards {
+    margin: 4rem auto;
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
 }
