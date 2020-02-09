@@ -80,6 +80,9 @@
       flex-direction: column;
       .restaurant-info {
         margin-bottom: 4rem;
+        p {
+          font-size: 1.2rem;
+        }
       }
       .restaurant-rating {
         font-size: 1.5rem;

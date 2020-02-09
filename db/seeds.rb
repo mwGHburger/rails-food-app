@@ -8,22 +8,31 @@
 require 'faker'
 require "open-uri"
 
+puts 'Assembling users...'
+    user = User.new(
+        email:        'user@user.com',
+        password:     123456,
+        remote_photo_url: "https://wallpapersite.com/images/pages/pic_h/17332.png"
+    )
+    user.save!
+puts 'Finished assembling users'
+
 puts "Creating restaurants"
-    3.times do
+    6.times do
         restaurant = Restaurant.new(
             name: Faker::Restaurant.name,
             address: Faker::Address.street_address,
             description: Faker::Restaurant.description,
-            cuisine: Faker::Nation.nationality,
+            cuisine: Faker::Restaurant.type,
             website: "https://ellamelbourne.com.au/",
             pricing: ["A Cheap Eat", " Moderately Price", "Expensive"].sample,
             user_id: 1,
-            remote_photo_url: "https://i.picsum.photos/id/302/200/200.jpg"
+            remote_photo_url: ["https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80","https://images.unsplash.com/photo-1502301103665-0b95cc738daf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80","https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80","https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80","https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"].sample
         )
-        rand(3).times do
-            photo_file = URI.open("https://i.picsum.photos/id/800/200/300.jpg")
-            restaurant.photos.attach(io: photo_file, filename: 'file.jpeg', content_type: "image/jpeg")
-        end
+        # rand(3).times do
+        #     photo_file = URI.open("https://i.picsum.photos/id/800/200/300.jpg")
+        #     restaurant.photos.attach(io: photo_file, filename: 'file.jpeg', content_type: "image/jpeg")
+        # end
         restaurant.save
     end
 puts "Finished creating restaurants"

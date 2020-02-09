@@ -8,5 +8,4 @@ class Restaurant < ApplicationRecord
     validates :address, presence: true
     validates :cuisine, presence: true
     validates :description, presence: true
-    validates :photo, presence: true
 end

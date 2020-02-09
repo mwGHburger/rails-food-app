@@ -6,7 +6,7 @@
                 <%= link_to restaurant_path(restaurant) do%>
                     <div class= "restaurant-card">
                         <div class="img-hover-zoom">
-                            <%= cl_image_tag restaurant.photo %>
+                            <%= cl_image_tag restaurant.photo, class:"restaurant-avatar" %>
                         </div>
                         <p class="cuisine-text"><%= restaurant.cuisine %></p>
                         <%= link_to restaurant.name, restaurant_path(restaurant), class:"restaurant-name-text" %>

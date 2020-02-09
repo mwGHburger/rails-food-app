@@ -14,7 +14,16 @@
   }
   .img-hover-zoom {
     overflow: hidden;
+    height: 200px;
+    text-align: center;
+    vertical-align: middle;
     img {
+      object-fit: contain;
+      width: 500px;
+      position: relative;
+      bottom: 50%;
+      right: 50%;
+      height: auto;
       border-radius: 4px;
       transition: transform 10s ease-out;
       &:hover {
